@@ -1,0 +1,179 @@
+//const { interval } = require("rxjs");
+
+function requestFormLoad(){
+    require([
+        "esri/views/MapView",
+        "esri/Map",
+        "esri/WebMap",
+        "esri/config",
+        "esri/layers/Layer",
+        "dojo/domReady!",
+        "dojo/on",
+       
+    ], function(
+      MapView, Map, WebMap,  esriConfig,Layer, domReady, on, 
+    ) {
+      esriConfig.portalUrl = "https://pelmorex.maps.arcgis.com/";
+      var webmap = new WebMap({
+        basemap: "dark-gray-vector"
+      
+    });
+    var view = new MapView({
+      
+        container: "viewDiv2",
+        map: webmap,
+        extent: {
+          // autocasts as new Extent()
+          xmin: -145.5268,
+          ymin: 14.9458,
+          xmax: -59.8861,
+          ymax: 59.7126,
+          
+        },
+         zoom: 4
+        // ,
+        // center: [
+        //   78.840596,
+        //   23.646193,          
+        // ]
+    });
+
+    Layer.fromPortalItem({
+      portalItem: {
+        id:"89df5d842f0a4401881ae07767d74ffc"
+      }
+    }).then((layer) => {
+      // Adds layer to the map
+      view.map.add(layer);
+    });
+    
+    viewda = null;
+    viewda = view;
+    
+    //add the basemap gallery, in this case we'll display maps from ArcGIS.com including bing maps
+    addBaseMap();
+    addSearch();
+    //add all other common widgets
+     addLayerlist();
+     addCoordinatConversion();
+     addScalebar();
+     addHome();
+
+     viewda.on("click", getCoordinates);
+    
+    });
+    
+}
+
+
+function getCoordinates(evt){
+  require([
+    "esri/Map",
+    "esri/views/MapView",
+    "esri/views/draw/Draw",
+    "esri/Graphic",
+    "esri/geometry/geometryEngine"
+  ], function (Map, MapView, Draw, Graphic, geometryEngine) {
+    viewda.graphics.removeAll();
+    updatePoint(evt.mapPoint);
+    
+
+function updatePoint(coordinates){
+  xToAdd = coordinates.x;
+  yToAdd = coordinates.y;
+  var point = {
+    type: "point", // autocasts as /Point
+    x: coordinates.x,
+    y: coordinates.y,
+    spatialReference: viewda.spatialReference
+  };
+  // var graphic = new Graphic({
+  //   geometry: point,
+  //   symbol: {
+  //     type: "simple-marker", // autocasts as SimpleMarkerSymbol
+  //     style: "square",
+  //     color: "red",
+  //     size: "16px",
+  //     outline: { // autocasts as SimpleLineSymbol
+  //       color: [255, 255, 0],
+  //       width: 3
+  //     }
+  //   }
+  // });
+  // viewda.graphics.add(graphic);
+  document.getElementById("longInp").value = evt.mapPoint.longitude;
+  document.getElementById("latInp").value = evt.mapPoint.latitude;
+}
+});
+}
+var featToAdd, xToAdd, yToAdd;
+function SubmitFeatures(feature){
+  featToAdd = JSON.parse(feature);
+require([
+  "esri/Map",
+  "esri/views/MapView",
+  "esri/views/draw/Draw",
+  "esri/Graphic",
+  "esri/layers/FeatureLayer",
+  "esri/geometry/geometryEngine"
+], function (Map, MapView, Draw, Graphic,FeatureLayer, geometryEngine) {
+
+
+        const featureLayer = new FeatureLayer({
+          url: "https://eicpoc.esri.in/server/rest/services/Nrl/NRL/FeatureServer/0",
+          
+        });
+
+        var features = [
+          {
+            geometry: {
+              type: "point",
+              x: xToAdd,
+              y: yToAdd,
+              spatialReference: viewda.spatialReference
+            },
+            attributes: {
+              fy : "2020-21",
+              app_recpt_date : Date.now(),
+              proposal__initiate_date : Date.now(),
+              descriptiion : featToAdd.desc,
+              amount_proposed : parseInt(featToAdd.proAmt),
+              applicant_name : featToAdd.fname,
+              address  : featToAdd.address1 + featToAdd.address2,
+              mobile_no  : parseFloat(featToAdd.mobile) ,
+              email  : featToAdd.email,
+              pan__number  : featToAdd.PANnum,
+              requestor__organization  : featToAdd.AppOrg,
+              requestor_type  : featToAdd.appType,
+              account_head  : featToAdd.appCategory,
+              st   : parseInt(featToAdd.numST) ,
+              women  : parseInt(featToAdd.women) ,
+              sc  : parseInt(featToAdd.numSC) ,
+              obc   : parseInt(featToAdd.numOBC) ,
+              others   : parseInt(featToAdd.numOth) ,
+              location  : featToAdd.location ,
+              state   : featToAdd.st ,
+              district    : featToAdd.dt ,
+              f5km__10km    : parseInt(featToAdd.kmOpt) ,
+              block   : featToAdd.blk ,
+              gaon__panchayat   : featToAdd.panchayat
+            }
+          }
+         ];
+
+        const edits = {
+          addFeatures: features
+        };
+
+        featureLayer
+            .applyEdits(edits)
+            .then(function(editsResult) {
+              var a = editsResult;
+            }).catch(function(error){
+              //$('#loader').hide();
+                return error;
+
+            });
+      });
+
+}

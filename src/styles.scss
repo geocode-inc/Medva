@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/* @import "~@ng-select/ng-select/themes/default.theme.css";*/
+/*@import "~@ng-select/ng-select/themes/material.theme.css"; */
+.hs-sub-menu, .hs-mega-menu {visibility:visible !important;}
+
+.hs-icon {
+  font-family: 'hs-icons' !important;
+  
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inherit;
+}
+.owl-dots {margin-top: -55px !important;  position: relative !important; float: right;}
+.openLgData{margin-left: 15% !important;margin-top: -8%;}
+
+.list-group-item.active {background-color: #9acbff !important;}
+.canvasjs-chart-credit {display: none !important;}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-moz-selection { /* Code for Firefox */
+  color: black;
+ 
+}
+
+::selection {
+  color: black;
+ 
+}
+
+.backgroun-clr {
+  background-color: #F5F5F5;
+  ;
+}

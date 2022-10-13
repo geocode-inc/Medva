@@ -1,0 +1,147 @@
+<div id="window-height"  class="window-height backgroun-clr">
+    <as-split direction="horizontal">
+        <as-split-area size ="3" [visible]="vis2" order="1" style="height: 700px;">
+
+
+         <!-- <mat-drawer #drawer class="example-sidenav" mode="side"> -->
+                <button mat-menu-item (click)="drawer1.toggle()">
+                  <mat-icon  matTooltip="Water Meter">dashboard</mat-icon>
+                  <span>Water Meter</span>
+                </button>
+                <button mat-menu-item >
+                  <mat-icon>analytics</mat-icon>
+                  <span>Analytics</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>print</mat-icon>
+                  <span>Print</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>assessment</mat-icon>
+                  <span>Assessment</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>leaderboard</mat-icon>
+                  <span>Charts</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>leaderboard</mat-icon>
+                  <span>Elevation Profile</span>
+                </button>
+         <!--  </mat-drawer>
+           <div class="example-sidenav-content">
+            <button type="button" mat-button (click)="drawer.toggle()">
+              Toggle
+            </button>
+          </div> -->
+          
+        </as-split-area>
+        <as-split-area  size="67" order="2">
+          
+            <div class="totalwidth">
+              
+                <div class="map-content" width="100%" >
+                  <mat-drawer #drawer1 class="WM_drawer">          
+                    <!--  <mat-accordion class="example-headers-align backgroun-clr" multi>
+                      <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                           <mat-panel-title>
+                            <button mat-menu-item>
+                              <mat-icon>dashboard</mat-icon>
+                              <span>Water Meter</span>
+                            </button>
+                          </mat-panel-title>            
+                        </mat-expansion-panel-header>    
+                        <mat-expansion-panel>
+                          <mat-expansion-panel-header>
+                            <button mat-menu-item >  
+                              <mat-icon>add_task</mat-icon>
+                              <span>Add Water Meter</span>
+                            </button>
+                          </mat-expansion-panel-header> -->
+                          <button mat-menu-item >
+                            <mat-icon>leaderboard</mat-icon>
+                            <span>View Water Meter</span>
+                          </button>
+                          <button mat-menu-item (click)="toggleAddForm($event)">
+                            <mat-icon>leaderboard</mat-icon>
+                            <span>Add Water Meter</span>
+                          </button>
+                          <div [hidden]='isHidden'>
+                            <p>Please click on map to add water meter</p>
+                            <mat-form-field appearance="fill">
+                              <mat-label>First name</mat-label>
+                              <input matInput>
+                            </mat-form-field>
+                        
+                            <mat-form-field appearance="fill">
+                              <mat-label>Last Name</mat-label>
+                              <input matInput type="number" min="1">
+                            </mat-form-field>
+  
+                            <mat-form-field appearance="fill">
+                              <mat-label>Street Name</mat-label>
+                              <input matInput type="number" min="1">
+                            </mat-form-field>
+  
+                            <mat-form-field appearance="fill">
+                              <mat-label>Meter ID</mat-label>
+                              <input matInput type="number" min="1">
+                            </mat-form-field>
+                          </div>
+                          
+                          
+                      
+                        <!-- </mat-expansion-panel>      
+                      </mat-expansion-panel>
+                    </mat-accordion>   -->
+                  </mat-drawer>
+                    <app-map-view></app-map-view>
+                    <div class="short-click" id="dataAvailablehere">
+                        <div class="click-div-btn">
+                       
+                          <a id="openPanel" class="button_data esri-widget--button esri-widget esri-ui-top-right esri-ui-corner esri-component esri-icon-line-chart"
+                            data-toggle="tooltip" title="View Charts" (click)="togglePanel($event)">
+                            <!-- <img src="assets/images/data.png">-->
+                            </a> 
+                        </div>
+                      </div>
+                      
+                </div>
+            </div>
+        </as-split-area>
+
+        <as-split-area size ="30" [visible]="vis1" order="3" style="height: 700px;">
+            <mat-tab-group animationDuration="0ms">
+                <mat-tab label="Charts">
+                    <div class="headin-req-form">
+                        <span class="titl-req-form"></span>
+                    </div>
+                    <br>
+                    <div id="noinfo"class = "header"><h4>Click on Map to view Reports</h4></div>
+                    
+                    <div id = "chart-container">
+        
+                    </div>
+                </mat-tab>
+                <mat-tab label="Data Table">
+                    <app-datatable-view></app-datatable-view>
+                </mat-tab>
+                <mat-tab label="Third">Content 3</mat-tab>
+              </mat-tab-group>
+
+            
+            
+                      
+
+        </as-split-area>
+
+    </as-split>
+    <div>
+        <app-datatable-view></app-datatable-view>
+    </div>
+
+    <div id="loader" style="position:absolute; right:50%; top:50%; z-index:100; display: none;">
+        <img src = "assets\images\loader.gif" style="width: 50%;">
+    </div>
+</div>

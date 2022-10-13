@@ -1,0 +1,240 @@
+
+
+  /* import the required JSAPI css */
+  @import url('https://js.arcgis.com/4.12/esri/css/main.css');
+
+.ng-select.custom {
+    border:2px;
+    min-height: 0px;
+    border-radius: 0;
+  }
+  .ng-select-container  {            
+    min-height: 0px;
+    border-radius: 0;
+    background-image: url("../../assets/images/uc.jpg");
+  }
+  div#windw-height { position: relative;}
+  
+  html,
+  body,
+  #viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+  #viewDiv2 {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+      float: left;
+  }
+  
+  .footer-bg {background:#00264c !important; color:#fff !important;}
+  .footer-bg ul li {color:#fff !important;}
+  
+  .g-color-footer-links {
+      color: #ffffff !important;
+  }
+  
+  .g-brd-w {
+      border-color: #ffffff !important;
+  }
+  .col-md-12.backgrd {
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+      margin-bottom:20px;
+  }
+  .col-md-12.backgrd a{text-decoration:underline;}
+  .col-md-12.backgrd h2 a{text-decoration:none;}
+  .col-md-12.backgrd h2 a:hover, .col-md-12.backgrd h2 a.active, .col-md-12.backgrd .dropbtn:focus{text-decoration:none; color:#fff !important;}
+  
+  /*-- about section --*/
+  .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto{float:left;}
+  .backgrd.about h4 {font-weight: 600; font-size: 18px; font-family: "Barlow", sans-serif; color: #444;}
+  .backgrd.about p { font-size: 15px; font-weight: 500; color:#444}
+  .backgrd.about ul li{list-style:disc; font-size:15px; font-family: "Barlow", sans-serif; font-weight: 500; color:#888; margin-bottom: 15px; }
+  .backgrd.about ul li ul{ padding-top:10px;}
+  .backgrd.about ul li ul li{margin-bottom:7px;}
+  .backgrd.about .form-control { padding: 6px 10px !important;}
+  .backgrd.about ul li a, .backgrd.about a{ color:#007bff;}
+  .backgrd.about h5{background:#3398dc; color:#fff; font-weight:500; font-size:18px; padding:7px 15px;font-family: "Barlow", sans-serif;}
+  .backgrd.about table a{font-size:22px; text-align:center;}
+  .backgrd.about table tr th{background:#f2f2f2;font-size: 15px;}
+  .backgrd.about table tr td{ vertical-align:middle; font-size: 15px;}
+  .backgrd.about table tr.main-hd-row td { background: #f9f9f9; font-weight:500;}
+  .backgrd.about a.complete-report{background:#007bff; color:#fff; text-decoration:none; padding:10px 22px; margin:12px 0 15px; display:table; font-size:18px;}
+  .backgrd.about a.complete-report i{margin-left:10px;}
+  .backgrd.about a.complete-report:hover, .backgrd.about a.complete-report:focus, .backgrd.about a.complete-report:active{ color:#fff !important; background:#000;}
+  
+  
+  /*--infodiscover --*/
+  .selection-base{border:1px solid #327ab7;}
+  .selection-base4 select{width:100%;}
+  .selection-base3, .form-sel2 form{width:100%;}
+  .selection-base4{border:1px solid #327ab7; width: 100%;}
+  .form-sel, .form-sel2, .form-sel3 { display: table; text-align: center; width: 100%; padding:14px 0; border-bottom:2px solid #327ab7;}
+  .form-sel input.form-check-input { margin: 5px 0 0; vertical-align: middle;}
+  .selection-base h4, .selection-base4 h4{background:#327ab7; padding:5px 15px; text-align:center; margin:0 auto 0px; font-size:14px; font-family: "Barlow", sans-serif; color:#fff; display:block;width: 100%;}
+  .form-sel3 button{margin:0 12px;}
+  .map-area-btm img{width:100%; }
+  .map-area-btm{overflow:hidden;border:1px solid #327ab7;}
+  .form-sel4{width: 100%; height: 696px; padding:9px 20px; border-bottom:2px solid #327ab7; overflow-y:scroll;  border-left:1px solid #327ab7; border-right:1px solid #327ab7;}
+  .form-sel4 input.form-check-input { margin: 5px 0 0; vertical-align: middle;}
+  .form-sel label.form-check-label, .form-sel4 label.form-check-label {padding-left: 19px;}
+  .clearfix{clear: both;}
+  .form-check-label{ font-size: 14px;}
+  .form-group{font-size: 13px;}
+  .btn-pos-left{float: left;}
+  .btn-pos-left-gis{float: left;}
+  .btn-pos-right{float: right;}
+  
+  .expand-collapse{ float: right; top: -19px; cursor: pointer; margin-right: 10px;}
+  .expand-collapse.in{ float: right; top: -19px; cursor: pointer;margin-right: 70px;}
+  .right-align-area .expand-collapse{ float: left; top: -19px; cursor: pointer; margin-right: 13px;}
+  .selection-base h4 input[type="checkbox"], .selection-base4 h4 input[type="checkbox"] { display: inline-block;  text-align: left; position: relative; margin-top:2px;}
+  .selection-base h4 label.form-check-label, .selection-base4 h4 label.form-check-label { margin-left: 0; padding-left: 5px;  vertical-align: top; display: inline-block;}
+  .right-align-area {  float: right;}
+  .right-align-area .btn-pos-right, .form-sel3 .btn-pos-right{
+    float: right;
+    font-size: 13px;
+    padding: 3px 10px;
+    vertical-align: top;
+    font-weight: 600;
+    line-height: 10px;
+  }
+  h4.mapchk{background:#327ab7; padding:5px 15px; text-align:center; margin:0 auto 0px; font-size:18px; font-family: "Barlow", sans-serif; color:#fff; display:block;width: 100%;}
+  .backbtn{
+    float:left;
+    bottom:3px;
+    font-size: 13px;
+    padding: 3px 10px;
+    vertical-align: top;
+    font-weight: 600;
+    line-height: 16px;
+  }
+  .checkboxCat{
+    background-color: #ccc;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 44px;
+    padding-left: 8px;
+  }
+  .checkboxrow{
+    font-size: 14px;
+      font-weight: bold;
+  }
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc; 
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
+  .hydrochkbox
+  {
+    font-weight: bold;
+    line-height: 21px;
+    padding-left: 0;
+    padding: 8px 0 5px;
+  
+  }
+  .accordn-titl{
+    width: 388px;
+    padding: 10px 0px 0 0px;
+    height: 43px;
+    background: #3279b7;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    border: 1px solid black;
+    
+  }
+  
+  
+  button.btn.btn-warning.btn-pos-right.backbtn {
+    position: absolute;
+    left: 15px;
+    top: 2px;
+    height: 22px;
+    z-index: 99;
+  }
+  div#windw-height {
+      position: relative;
+  }
+  /* .nextbtnpos{
+    position: absolute;
+      right: 15px;
+      top: 5px;
+      height: 24px;
+      z-index: 9999999999;
+  } */
+  .btnpos{
+    font-size: 13px;
+    padding: 3px 10px;
+    vertical-align: top;
+    font-weight: 600;
+    line-height: 16px;
+    bottom: 21px;
+    margin-right: 10px;
+  }
+  
+  
+  .mat-expansion-panel-header, .mat-expansion-panel-header.mat-expanded:focus, .mat-expansion-panel-header.mat-expanded:hover {
+    width: 100%;
+    padding-left: 0px;
+    background: rgb(50, 121, 183) !important;
+    border-radius: 0px;
+    height: auto !important;
+    margin-bottom: 13px;
+  }
+  .accordn-titl {
+    width: 100%;
+    padding: 5px 0px 5px 0px;
+    background: #3279b7;
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    border: 0;
+    height: auto;
+  }
+  span.mat-expansion-indicator::after, span.mat-expansion-indicator::before, .mat-expansion-indicator::after, .mat-expansion-panel-header-description, span.mat-expansion-indicator {
+    color: #ffffff !important;
+  }
+  #toolbarDiv{
+    position: fixed;
+    right: 32.3%;
+    bottom: 57%;
+  }
+  
+  
+  @media only screen and (min-width : 813px) and (max-width : 1280px) and (orientation : landscape) {
+    .accordn-titl{ font-size: 14px;}
+    .form-check-label{ font-size: 12px;}
+    .selection-base h4, .selection-base4 h4{ font-size: 13px;}
+    .right-align-area .expand-collapse{margin-right:8px;}
+    .mat-expansion-panel-body td { font-size: 12px;}
+  }

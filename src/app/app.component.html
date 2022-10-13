@@ -1,0 +1,94 @@
+<!-- The content below is only a placeholder and can be replaced. -->
+<div class="title">
+ 
+ 
+</div>
+<mat-toolbar class ="backgroun-clr">
+  <!--<span>
+   <button mat-icon-button class="example-icon"  aria-label="Example icon-button with menu icon">
+    <mat-icon>build</mat-icon>
+  </button>
+</span> -->
+  <span><img src="assets/images/logo.png" alt="logo" width="50" height="50"></span>
+  
+  <span class="header">Insight - Smart Village</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon projmenu" [matMenuTriggerFor]="projmenu" aria-label="Example icon-button with menu icon">
+    <mat-icon>view_module</mat-icon>
+  </button>
+  <mat-menu #projmenu="matMenu" class="matmenu">
+    <button mat-menu-item>
+      <mat-icon>work</mat-icon>
+      <span>Project #1 <mat-icon>favorite_border</mat-icon></span>
+    </button>
+    <button mat-menu-item >
+      <mat-icon>build</mat-icon>
+      <span>Project #2 <mat-icon>favorite</mat-icon></span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>store</mat-icon>
+      <span>Project #3 <mat-icon>favorite_border</mat-icon></span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>work</mat-icon>
+      <span>Project #4 <mat-icon>favorite</mat-icon></span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>build</mat-icon>
+      <span>Project #5 <mat-icon>favorite_border</mat-icon></span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>store</mat-icon>
+      <span>Project #6 <mat-icon>favorite_border</mat-icon></span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button class="example-icon favorite-icon favmenu" [matMenuTriggerFor]="favmenu" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <mat-menu #favmenu="matMenu" class="matmenu">
+    <button mat-menu-item>
+      <mat-icon>build</mat-icon>
+      <span>Project #2 <mat-icon>favorite</mat-icon></span>
+    </button>
+    <button mat-menu-item >
+      <mat-icon>work</mat-icon>
+      <span>Project #4 <mat-icon>favorite</mat-icon></span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button class="example-icon Usermenu" [matMenuTriggerFor]="Usermenu" aria-label="Example icon-button with share icon">
+    <mat-icon>manage_accounts</mat-icon>
+    <span><mat-label>Gurleen Chadha - Smart City</mat-label></span>
+    <mat-menu #Usermenu="matMenu" class="matmenu">
+      <button mat-menu-item [matMenuTriggerFor]="userSettings">
+        <span> <mat-icon>perm_identity</mat-icon> My Profile</span>
+      </button>
+        <!-- <button mat-menu-item [matMenuTriggerFor]="userProjects">
+        <span><mat-icon>work</mat-icon>Projects</span>
+      </button>
+        <button mat-menu-item>
+        <span><mat-icon>password</mat-icon>Change Password</span>
+      </button> -->
+        <button mat-menu-item>
+        <span><mat-icon>logout</mat-icon>Log out</span>
+      </button>
+    </mat-menu>
+  </button>
+</mat-toolbar>
+
+<!-- <mat-menu #userProjects="matMenu">
+  <button mat-menu-item >Project #1</button>
+  <button mat-menu-item >Project #2</button>
+  <button mat-menu-item >Project #3</button>
+  <button mat-menu-item>Birds</button>
+  <button mat-menu-item>Mammals</button>
+</mat-menu> -->
+
+<mat-menu #userSettings="matMenu">
+  
+  <button mat-menu-item >User Settings</button>
+  <button mat-menu-item >Change Profile Picture</button>
+  <button mat-menu-item >Reset Password</button>
+</mat-menu>
+
+
+<app-chart-view></app-chart-view>
