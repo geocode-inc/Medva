@@ -117,6 +117,16 @@ body {
   float: left;
 }
 
+// Custom Css
+.backgroun-clr{flex-flow: column wrap; align-content: space-between; align-items: center;justify-content: center; background: #fff;color: #074ce5; border-bottom: 1px solid #ccc;}
+.top_nav_left{display: flex;align-items: center;justify-content: center;}
+//.top_nav_right{}
+.Usermenu, .logout{width: auto; padding: 0 8px;}
+.logout{padding-right: 0px;}
+.mat-menu-item {width: auto;}
+
+app-chart-view .as-split-area{overflow: hidden;}
+
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
@@ -137,9 +147,9 @@ body {
 .mat-menu-panel{
   margin-right: 500px !important;
 }
-.projmenu{
-right: 3%
-}
-.favmenu{
-  right: 3%
-  }
+// .projmenu{
+// right: 3%
+// }
+// .favmenu{
+//   right: 3%
+//   }

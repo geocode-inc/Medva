@@ -1,8 +1,6 @@
 <div id="window-height"  class="window-height backgroun-clr">
     <as-split direction="horizontal">
-        <as-split-area size ="3" [visible]="vis2" order="1" style="height: 700px;">
-
-
+        <div class="left_nav_icons" order="1">
          <!-- <mat-drawer #drawer class="example-sidenav" mode="side"> -->
                 <button mat-menu-item (click)="drawer1.toggle()">
                   <mat-icon  matTooltip="Water Meter">dashboard</mat-icon>
@@ -35,14 +33,15 @@
             </button>
           </div> -->
           
-        </as-split-area>
-        <as-split-area  size="67" order="2">
+        </div>
+        <as-split-area class="map" size="65" order="2">
           
             <div class="totalwidth">
               
                 <div class="map-content" width="100%" >
                   <mat-drawer #drawer1 class="WM_drawer">          
-                    <!--  <mat-accordion class="example-headers-align backgroun-clr" multi>
+                    <div class="scroll-box">
+                      <!--  <mat-accordion class="example-headers-align backgroun-clr" multi>
                       <mat-expansion-panel>
                       <mat-expansion-panel-header>
                            <mat-panel-title>
@@ -67,7 +66,7 @@
                             <mat-icon>leaderboard</mat-icon>
                             <span>Add Water Meter</span>
                           </button>
-                          <div [hidden]='isHidden'>
+                          <div [hidden]='isHidden' class="addwaterwrap">
                             <p>Please click on map to add water meter</p>
                             <mat-form-field appearance="fill">
                               <mat-label>First name</mat-label>
@@ -88,6 +87,10 @@
                               <mat-label>Meter ID</mat-label>
                               <input matInput type="number" min="1">
                             </mat-form-field>
+                            <mat-form-field appearance="fill">
+                              <mat-label>Meter ID</mat-label>
+                              <input matInput type="number" min="1">
+                            </mat-form-field>
                           </div>
                           
                           
@@ -95,6 +98,8 @@
                         <!-- </mat-expansion-panel>      
                       </mat-expansion-panel>
                     </mat-accordion>   -->
+                    </div>
+                    <div class="cover-bar"></div>
                   </mat-drawer>
                     <app-map-view></app-map-view>
                     <div class="short-click" id="dataAvailablehere">
@@ -111,7 +116,7 @@
             </div>
         </as-split-area>
 
-        <as-split-area size ="30" [visible]="vis1" order="3" style="height: 700px;">
+        <as-split-area size ="35" [visible]="vis1" order="3">
             <mat-tab-group animationDuration="0ms">
                 <mat-tab label="Charts">
                     <div class="headin-req-form">

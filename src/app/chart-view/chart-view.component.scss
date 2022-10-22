@@ -63,14 +63,87 @@
   .example-sidenav {
     padding: 20px;
   }
-
+ // custom css
   .WM_drawer{
     position: fixed;
     z-index: 1;
     transform: none;
+    border: 1px solid #ccc;
     visibility: visible;
-    width: 20%;
-    height: 80%;
+    width: 22%;
+    height: 79.6%;
+    overflow-y: auto;
     box-shadow: none;
+
+    //div{height: 100%;}
+
+    //scroll bar css
+    // .scroll-box {
+    //   height: 100%;
+    //   overflow-y: scroll;
+    // }
+    // .scroll-box::-webkit-scrollbar {
+    //   width: .4em; 
+    // }
+    // .scroll-box::-webkit-scrollbar,
+    // .scroll-box::-webkit-scrollbar-thumb {
+    //   overflow:visible;
+    //   border-radius: 4px;
+    // }
+    // .scroll-box::-webkit-scrollbar-thumb {
+    //   background: rgba(0,0,0,.2); 
+    // }
+    // .cover-bar {
+    //   position: absolute;
+    //   background: #fff;;
+    //   height: 100%;  
+    //   top: 0;
+    //   right: 0;
+    //   width: .4em;
+    //   -webkit-transition: all .5s;
+    //   opacity: 1;
+    // }
+
   }
+  /* MAGIC HAPPENS HERE */
+  // .WM_drawer:hover .cover-bar {
+  //   opacity: 0;
+  // -webkit-transition: all .5s;
+  // }
+ 
+  .left_nav_icons{width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background: #fff;
+    border-right: 1px solid #ccc;
   
+    button{
+      padding: 10px 5px;
+      height: auto;
+      flex-direction: column;
+    display: flex;
+    align-items: center;
+      .mat-icon{margin: 0; color: #074ce5;}
+      span{
+        font-size: 12px;
+        line-height: 15px;
+        white-space: break-spaces;
+        text-align: center;
+        color: #074ce5;
+      }
+    }
+    button:hover{
+      background: #074ce5;
+      .mat-icon, span{color: #fff;}
+    }
+  }
+  .addwaterwrap {
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+    p{font-size: 12px;}
+    .mat-form-field{width: 100%;}
+}

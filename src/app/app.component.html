@@ -9,10 +9,11 @@
     <mat-icon>build</mat-icon>
   </button>
 </span> -->
-  <span><img src="assets/images/logo.png" alt="logo" width="50" height="50"></span>
-  
+<div class="top_nav_left">
+  <img src="assets/images/logo.png" alt="logo" width="50" height="50">
   <span class="header">Insight - Smart Village</span>
-  <span class="example-spacer"></span>
+</div>
+<div class="top_nav_right">
   <button mat-icon-button class="example-icon projmenu" [matMenuTriggerFor]="projmenu" aria-label="Example icon-button with menu icon">
     <mat-icon>view_module</mat-icon>
   </button>
@@ -68,11 +69,13 @@
         <button mat-menu-item>
         <span><mat-icon>password</mat-icon>Change Password</span>
       </button> -->
-        <button mat-menu-item>
-        <span><mat-icon>logout</mat-icon>Log out</span>
+      <button mat-icon-button class="logout">
+        <mat-icon>logout</mat-icon>
+        <mat-label>Log out</mat-label>
       </button>
     </mat-menu>
   </button>
+</div>
 </mat-toolbar>
 
 <!-- <mat-menu #userProjects="matMenu">
