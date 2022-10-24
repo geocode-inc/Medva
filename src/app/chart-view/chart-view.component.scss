@@ -112,7 +112,12 @@
   // }
   as-split-area {flex: auto !important;}
   .map{width: 90%;}
- 
+  .chart-wrap {
+    .header{
+      padding: 15px 10px;
+      h4{margin: 0; color: #074ce5;}
+    }
+  }
   .left_nav_icons{width: 80px;
     display: flex;
     align-items: center;

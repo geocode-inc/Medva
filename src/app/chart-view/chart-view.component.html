@@ -115,18 +115,14 @@
             </div>
         </as-split-area>
 
-        <as-split-area size ="35" [visible]="vis1" order="3">
+        <as-split-area class="chart-wrap" size ="35" [visible]="vis1" order="3">
             <mat-tab-group animationDuration="0ms">
                 <mat-tab label="Charts">
                     <div class="headin-req-form">
                         <span class="titl-req-form"></span>
                     </div>
-                    <br>
-                    <div id="noinfo"class = "header"><h4>Click on Map to view Reports</h4></div>
-                    
-                    <div id = "chart-container">
-        
-                    </div>
+                    <div id="noinfo" class="header"><h4>Click on Map to view Reports</h4></div>
+                    <div id="chart-container"></div>
                 </mat-tab>
                 <mat-tab label="Data Table">
                     <app-datatable-view></app-datatable-view>
